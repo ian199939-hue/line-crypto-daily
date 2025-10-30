@@ -61,7 +61,6 @@ async function genDailyBrief() {
 - 2條可執行的交易觀察
 若缺資料以「—」省略，不可捏造；控制在 280~480 字，段落清楚，結尾附一句簡短免責。` }
     ],
-    temperature: 0.5
   })
   return r.choices[0].message.content.trim()
 }
@@ -73,7 +72,6 @@ async function aiReply(text) {
       { role: 'system', content: '你是幣圈研究員，回覆精簡、具體、繁體中文，不講空話。' },
       { role: 'user', content: text }
     ],
-    temperature: 0.3
   })
   return r.choices[0].message.content.trim()
 }
@@ -81,3 +79,4 @@ async function aiReply(text) {
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server started')
 })
+
